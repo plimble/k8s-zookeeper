@@ -4,7 +4,7 @@ T_HOSTNAME=$(hostname)
 T_ID=$( echo ${T_HOSTNAME} | cut -d "-" -f2 | cut -d "-" -f1 )
 T_SERVICE=$( echo ${T_HOSTNAME} | cut -d "-" -f1 )
 
-ZOOKEEPER_SERVER_ID=$T_ID
+export ZOOKEEPER_SERVER_ID=$T_ID
 
 if [[ -n "${ZOOKEEPER_REPLICAS-}" ]]
 then
